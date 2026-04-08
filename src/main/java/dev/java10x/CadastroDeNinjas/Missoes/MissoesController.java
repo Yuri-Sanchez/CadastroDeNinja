@@ -15,16 +15,21 @@ public class MissoesController {
         this.missoesService = missoesService;
     }
 
+    // POST -- Mandar uma requisição para criar as missões
+    @PostMapping("/criar")
+    public String criarMissao(){
+        return "Missão criada com sucesso";
+    }
+
     // GET -- Mandar uma requisição para mostrar as missões
     @GetMapping("/listar")
     public List<MissoesModel> listarMissoes(){
         return missoesService.listarMissoes();
     }
 
-    // POST -- Mandar uma requisição para criar as missões
-    @PostMapping("/criar")
-    public String criarMissao(){
-        return "Missão criada com sucesso";
+    @GetMapping("/listar/{id}")
+    public MissoesModel listarMissoesPorId(@PathVariable Long id){
+        return missoesService.listarMissoesPorId(id);
     }
 
     // PUT -- Mandar uma requisição para alterar as missões
