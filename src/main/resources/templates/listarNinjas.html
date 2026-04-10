@@ -95,7 +95,7 @@
                 <td th:text="${ninja.rank}"></td>
                 <td>
                     <span th:if="${ninja.missoes}">
-                        <span th:text="${ninja.missoes.nome}"></span>Dificuldade: <span th:text="${ninja.missoes.dificuldade}"></span>
+                        <span th:text="${ninja.missoes.nome}"></span><br>Dificuldade: <span th:text="${ninja.missoes.dificuldade}"></span>
                     </span>
 
                     <span th:if="${ninja.missoes == null}">Sem Missões cadastradas para o ninja</span>
